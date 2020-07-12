@@ -1,7 +1,13 @@
 import React from "react"
 import { Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faReact } from "@fortawesome/free-brands-svg-icons"
+import {
+  faLinkedinIn,
+  faGithub,
+  faInstagram,
+  faDev,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
@@ -14,7 +20,19 @@ const IndexPage = () => (
       Hello! I’m Faiz Alkautsar <br /> I’m software developer based in Kuala
       Lumpur, Malaysia. I love CSS and front-end web development!
     </h1>
-    <FontAwesomeIcon icon={faReact} size="3x" />
+    <div>
+      {[
+        { url: "https://www.instagram.com/alkafaiz/", icon: faLinkedinIn },
+        { url: "https://www.instagram.com/alkafaiz/", icon: faTwitter },
+        { url: "https://www.instagram.com/alkafaiz/", icon: faInstagram },
+        { url: "https://www.instagram.com/alkafaiz/", icon: faGithub },
+        { url: "https://www.instagram.com/alkafaiz/", icon: faDev },
+      ].map(icon => (
+        <a href={icon.url} className="mr-4">
+          <FontAwesomeIcon icon={icon.icon} size="2x" />
+        </a>
+      ))}
+    </div>
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
     </div>
