@@ -3,6 +3,13 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import Fade from "react-reveal/Fade"
 
+const navItems = [
+  { label: "Home", url: "/" },
+  { label: "Uses", url: "/" },
+  { label: "About", url: "/" },
+  { label: "Contact", url: "/" },
+]
+
 const AlkafaizIcon = () => (
   <svg
     width="30"
@@ -20,14 +27,24 @@ const AlkafaizIcon = () => (
 
 const Header = ({ siteTitle }) => {
   const [showMenu, setShowMenu] = useState(false)
-  const [isDesktop, setIsDesktop] = useState(false)
-  const handleClick = () => setShowMenu(prev => !prev)
+  const [isDesktop, setIsDesktop] = useState(true)
+  const handleClick = () => {
+    setShowMenu(prev => !prev)
+  }
+
   useEffect(() => {
-    window.addEventListener("resize", function (event) {
+    function handleResize(event) {
       if (window.innerWidth > 1024) setIsDesktop(true)
       else setIsDesktop(false)
-    })
+    }
+
+    handleResize()
+
+    window.addEventListener("resize", handleResize)
+
+    return () => window.removeEventListener("scroll", handleResize)
   }, [])
+
   return (
     <header className="container mx-auto flex items-center justify-between flex-wrap p-6 lg:px-0 lg:py-6">
       <AlkafaizIcon />
@@ -46,7 +63,14 @@ const Header = ({ siteTitle }) => {
           </svg>
         </button>
       </div>
-      <Fade right when={showMenu || isDesktop} duration={500}>
+      {/* {!isDesktop && ( */}
+      <Fade
+        right
+        when={showMenu || isDesktop}
+        duration={500}
+        // unmountOnExit={true}
+        // mountOnEnter={true}
+      >
         <div className="bg-black fixed right-0 top-0 h-full w-3/4 z-10 lg:bg-white lg:relative lg:flex lg:items-center lg:w-auto">
           <div className="p-6 text-right flex flex-col items-end lg:flex-grow lg:flex-row lg:p-0">
             <button className="border-none lg:hidden" onClick={handleClick}>
@@ -64,33 +88,21 @@ const Header = ({ siteTitle }) => {
                 />
               </svg>
             </button>
-            <a
-              href="#responsive-header"
-              className="text-2xl block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white lg:text-gray-800 lg:text-base lg:hover:text-yellow-400 lg:mr-5"
-            >
-              Home
-            </a>
-            <a
-              href="#responsive-header"
-              className="text-2xl block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white lg:text-gray-800 lg:text-base lg:hover:text-yellow-400 lg:mr-5"
-            >
-              Uses
-            </a>
-            <a
-              href="#responsive-header"
-              className="text-2xl block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white lg:text-gray-800 lg:text-base lg:hover:text-yellow-400 lg:mr-5"
-            >
-              About
-            </a>
-            <a
-              href="#responsive-header"
-              className="text-2xl block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white lg:text-gray-800 lg:text-base lg:hover:text-yellow-400"
-            >
-              Contact
-            </a>
+            {navItems.map((nav, index) => (
+              <Link
+                key={index}
+                to={nav.url}
+                className={`text-2xl block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white lg:text-gray-800 lg:text-base lg:hover:text-yellow-400 ${
+                  navItems.length !== index - 1 ? "lg:mr-5" : ""
+                } `}
+              >
+                {nav.label}
+              </Link>
+            ))}
           </div>
         </div>
       </Fade>
+      {/* )} */}
     </header>
   )
 }
