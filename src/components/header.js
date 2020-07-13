@@ -34,7 +34,7 @@ const Header = ({ siteTitle }) => {
 
   useEffect(() => {
     function handleResize(event) {
-      if (window.innerWidth > 1024) setIsDesktop(true)
+      if (window.innerWidth >= 1024) setIsDesktop(true)
       else setIsDesktop(false)
     }
 
@@ -46,7 +46,7 @@ const Header = ({ siteTitle }) => {
   }, [])
 
   return (
-    <header className="container mx-auto flex items-center justify-between flex-wrap p-6 lg:px-0 lg:py-6">
+    <header className="container mx-auto flex items-center justify-between flex-wrap p-6 lg:px-5 lg:py-6 xl:px-0">
       <AlkafaizIcon />
       <div className="block lg:hidden">
         <button

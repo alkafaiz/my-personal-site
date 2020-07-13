@@ -31,11 +31,11 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <h1 className="leading-tight lg:mt-4 px-3">
+      <h1 className="leading-tight lg:mt-4 px-3 lg:px-6 xl:px-0">
         Hello! I’m Faiz Alkautsar <br /> I’m software developer based in Kuala
         Lumpur, Malaysia. I love CSS and front-end web development!
       </h1>
-      <div className="px-3">
+      <div className="px-3 lg:px-6 xl:px-0">
         {[
           { url: "https://www.linkedin.com/in/alkafaiz/", icon: faLinkedinIn },
           { url: "https://twitter.com/Alkafaiz", icon: faTwitter },
@@ -57,7 +57,7 @@ const IndexPage = () => {
       <div className="hidden">
         <Img fluid={data.placeholderImage.childImageSharp.fluid} />
       </div>
-      <section className="mt-6 px-3 text-xl leading-7">
+      <section className="mt-6 px-3 text-lg leading-8 lg:px-6 xl:px-0">
         <p>A true-born Indonesian</p>
         <p>
           Hello there! I'm a software engineer who is passionate about turning
@@ -70,8 +70,10 @@ const IndexPage = () => {
           help me to build stuff.
         </p>
       </section>
-      <h2 className="title flex items-center px-3">Projects</h2>
-      <section className="p-3">
+      <h2 className="title flex items-center px-3 lg:px-6 xl:px-0">Projects</h2>
+      <section className="p-3 lg:flex lg:flex-wrap lg:px-6 xl:px-0 xl:flex-no-wrap">
+        <ProjectCard />
+        <ProjectCard />
         <ProjectCard />
       </section>
       <Link to="/page-2/">Go to page 2</Link> <br />
