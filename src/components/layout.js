@@ -7,11 +7,13 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import "typeface-poppins"
 
 import Header from "./header"
 import "./layout.css"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faHeart } from "@fortawesome/free-solid-svg-icons"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -27,12 +29,20 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div className="container mx-auto">
+      <div style={{ maxWidth: 1540, margin: "auto" }}>
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+        <hr />
+        <footer className="my-6 text-sm px-3 lg:px-6 xl:px-10">
+          <p className="mb-1">
+            Made with <FontAwesomeIcon color="#f7b538" icon={faHeart} /> &
+            <span>
+              <Link className="font-bold" to="/">
+                various tech
+              </Link>
+            </span>{" "}
+            in Jakarta, Indonesia
+          </p>
+          © Faiz Alkautsar {new Date().getFullYear()}
         </footer>
       </div>
     </>

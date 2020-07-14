@@ -5,9 +5,9 @@ import Fade from "react-reveal/Fade"
 
 const navItems = [
   { label: "Home", url: "/" },
-  { label: "Uses", url: "/" },
-  { label: "About", url: "/" },
-  { label: "Contact", url: "/" },
+  { label: "Uses", url: "/uses" },
+  { label: "About", url: "/about" },
+  { label: "Contact", url: "/contact" },
 ]
 
 const AlkafaizIcon = () => (
@@ -27,7 +27,7 @@ const AlkafaizIcon = () => (
 
 const Header = ({ siteTitle }) => {
   const [showMenu, setShowMenu] = useState(false)
-  const [isDesktop, setIsDesktop] = useState(true)
+  const [isDesktop, setIsDesktop] = useState(false)
   const handleClick = () => {
     setShowMenu(prev => !prev)
   }
@@ -46,8 +46,14 @@ const Header = ({ siteTitle }) => {
   }, [])
 
   return (
-    <header className="container mx-auto flex items-center justify-between flex-wrap p-6 lg:px-5 lg:py-6 xl:px-0">
-      <AlkafaizIcon />
+    <header
+      style={{ maxWidth: 1540, margin: "auto" }}
+      className="px-3 mx-auto flex items-center justify-between flex-wrap p-6 lg:px-5 lg:py-6 xl:px-10 xl:mt-5"
+    >
+      <div className="flex items-center">
+        <AlkafaizIcon />
+        <span className="ml-3 text-2xl font-bold">ALKAFAIZ.</span>
+      </div>
       <div className="block lg:hidden">
         <button
           className="flex items-center px-3 py-2 border rounded border-black hover:text-white hover:border-white"

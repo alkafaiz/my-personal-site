@@ -5,7 +5,7 @@ import stacks from "../constants/stacks"
 
 const StackChip = ({ label }) => (
   <div
-    className="py-1 px-2 mr-2 w-auto rounded text-white"
+    className="py-1 px-2 mr-2 w-auto rounded text-white text-sm font-semibold"
     style={{
       backgroundColor: stacks.find(stack => stack.name === label).color,
     }}
@@ -35,7 +35,7 @@ export default function ProjectCard() {
       <h4 className="text-lg px-3 mt-3 md:px-5 md:mt-5">
         ATTENDANCE INFORMATION SYSTEM FOR INTERNATIONAL SYMPOSIUM 2019
       </h4>
-      <p className="px-3 md:px-5">
+      <p className="px-3 text-gray-600 md:px-5 xl:text-sm">
         Specialized native windows application built for International Symposium
         OISAA 2019 Johor Bahru Malaysia. This application has successfully
         reduced participant registering time up to 80%.
