@@ -54,11 +54,11 @@ const IndexPage = () => {
           </a>
         ))}
       </div>
-      <div className="my-12 flex">
-        <div className="hidden xl:block w-1/2">
+      <div className="my-6 md:my-10 lg:my-16 flex">
+        <div className="hidden lg:block w-1/2">
           <Img fluid={data.placeholderImage.childImageSharp.fluid} />
         </div>
-        <section className="mt-6 px-3 text-base leading-7 lg:px-6 xl:px-0 xl:w-1/2 xl:pl-12 xl:pr-40">
+        <section className="mt-6 px-3 text-base leading-7 lg:px-6 lg:px-0 lg:w-1/2 lg:pl-12 lg:pr-20 xl:pr-40">
           <p>A true-born Indonesian</p>
           <p>
             Hello there! I'm a software engineer who is passionate about turning
@@ -81,7 +81,7 @@ const IndexPage = () => {
         <ProjectCard />
       </section>
 
-      <p className="px-3 text-center">
+      <p className="px-3 text-center lg:my-32">
         Interested in collaborating?{" "}
         <span>
           {window.innerWidth <= 768 && <br />}

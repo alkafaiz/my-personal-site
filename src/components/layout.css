@@ -627,6 +627,11 @@ pre tt:after {
   }
 }
 
+.title {
+  display: flex;
+  align-items: center;
+}
+
 .title::before {
   content: "";
   width: 50px;

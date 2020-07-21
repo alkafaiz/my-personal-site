@@ -29,10 +29,16 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div style={{ maxWidth: 1540, margin: "auto" }}>
+      <div
+        style={{
+          maxWidth: 1540,
+          margin: "auto",
+        }}
+      >
         <main>{children}</main>
-        <hr />
-        <footer className="my-6 text-sm px-3 lg:px-6 xl:px-10">
+
+        <footer className="my-6 text-sm px-3 lg:px-6 xl:px-10 mt-auto">
+          <hr />
           <p className="mb-1">
             Made with <FontAwesomeIcon color="#f7b538" icon={faHeart} /> &
             <span>

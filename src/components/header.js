@@ -50,10 +50,12 @@ const Header = ({ siteTitle }) => {
       style={{ maxWidth: 1540, margin: "auto" }}
       className="px-3 mx-auto flex items-center justify-between flex-wrap p-6 lg:px-5 lg:py-6 xl:px-10 xl:mt-5"
     >
-      <div className="flex items-center">
+      {/* <div className="flex items-center"> */}
+      <Link to="/">
         <AlkafaizIcon />
-        <span className="ml-3 text-2xl font-bold">ALKAFAIZ.</span>
-      </div>
+      </Link>
+      {/* <span className="ml-3 text-2xl font-bold">ALKAFAIZ.</span>
+      </div> */}
       <div className="block lg:hidden">
         <button
           className="flex items-center px-3 py-2 border rounded border-black hover:text-white hover:border-white"

@@ -5,7 +5,7 @@ import stacks from "../constants/stacks"
 
 const StackChip = ({ label }) => (
   <div
-    className="py-1 px-2 mr-2 w-auto rounded text-white text-sm font-semibold"
+    className="py-1 px-2 mr-2 w-auto rounded text-white text-xs font-semibold"
     style={{
       backgroundColor: stacks.find(stack => stack.name === label).color,
     }}
