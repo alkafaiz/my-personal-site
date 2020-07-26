@@ -1,3 +1,5 @@
+const project = require("./src/constants/projects")
+const path = require("path")
 /**
  * Implement Gatsby's Node APIs in this file.
  *
@@ -11,19 +13,31 @@ exports.sourceNodes = ({
   createContentDigest,
   createNodeId,
 }) => {
-  // const resultData = await result.json().then(res => res.planModals)
-  // resultData.forEach(plan =>
-  //   createNode({
-  //     ...plan,
-  //     id: createNodeId(`${PLAN_NODE_TYPE}-${plan.id}`),
-  //     parent: null,
-  //     children: [],
-  //     internal: {
-  //       type: PLAN_NODE_TYPE,
-  //       content: JSON.stringify(plan),
-  //       contentDigest: createContentDigest(plan),
-  //     },
-  //   })
-  // )
-  // return
+  const projects = project.getAll()
+
+  projects.forEach((project, index) =>
+    createNode({
+      ...project,
+      image: {
+        name: project.featuredImg.split(".")[0],
+        ext: `.${project.featuredImg.split(".")[1]}`,
+        // extension: project.featuredImg.split(".")[1],
+        // absolutePath: path.resolve(
+        //   `${__dirname}/src/images/${project.featuredImg}`
+        // ),
+        absolutePath:
+          "D:/faiz/files/project/alkafaiz.com/source-code/src/images/SIMY-cover.jpg",
+        extension: "jpg",
+      },
+      id: createNodeId(`project-${index}`),
+      parent: null,
+      children: [],
+      internal: {
+        type: "project",
+        content: JSON.stringify(project),
+        contentDigest: createContentDigest(project),
+      },
+    })
+  )
+  return
 }
