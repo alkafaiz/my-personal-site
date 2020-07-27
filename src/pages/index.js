@@ -34,6 +34,13 @@ const IndexPage = () => {
           }
         }
       }
+      catalyst: file(relativePath: { eq: "catalyst-cover.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 700) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
 
@@ -108,15 +115,15 @@ const IndexPage = () => {
             chips={[stacks.cSharp, stacks.azureSQL]}
             slug="attendance-information-system-for-international-symposium-malaysia-2019"
           />
-          <ProjectCard
+          {/* <ProjectCard
             coverFluid={data.SIMY.childImageSharp.fluid}
             title="KASTRAT AUISS BLOG BUILT WITH GATSBY AND STRAPI HEADLESS CMS"
             excerpt="Blog type website for AUISS Strategic Issue Research Department to publish monthly articles and annoucements. Built with few stacks include Gatsby, Strapi CMS, and Cloudinary."
             chips={[stacks.gatsby, stacks.strapi, stacks.cloudinary]}
             slug="kastrat-auiss-blog-built-with-gatsby-and-strapi-headless-cms"
-          />
+          /> */}
           <ProjectCard
-            coverFluid={data.SIMY.childImageSharp.fluid}
+            coverFluid={data.catalyst.childImageSharp.fluid}
             title="CATALYST: SME-SPECIALIZED POS SYSTEM WITH BUSINESS INTELLIGENCE"
             excerpt="Native windows application of Point-of-Sales system integrated with Ms Power BI, this project aims to foster the growth of Small Medium Enterprise (SME) in Indonesia."
             chips={[stacks.cSharp, stacks.powerBI, stacks.sqlServer]}

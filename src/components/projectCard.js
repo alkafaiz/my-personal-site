@@ -20,18 +20,6 @@ export default function ProjectCard({
   chips,
   slug,
 }) {
-  // const data = useStaticQuery(graphql`
-  //   query {
-  //     SIMY: file(relativePath: { eq: "SIMY-cover.jpg" }) {
-  //       childImageSharp {
-  //         fluid(maxWidth: 700) {
-  //           ...GatsbyImageSharpFluid
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
-
   return (
     <div className="w-full border border-gray-500 rounded-lg overflow-hidden pb-3 md:w-5/12 mb-4 md:pb-5 md:mr-4 lg:w-5/12 xl:w-4/12">
       <Link to={`/projects/${slug}`}>
