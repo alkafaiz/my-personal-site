@@ -85,7 +85,7 @@ const UsesPage = () => {
             These are the rest of the stacks and tools that I'm familiar with.
           </p>
           <a
-            frameborder="0"
+            frameBorder="0"
             data-theme="light"
             data-layers="1,2,3,4"
             data-stack-embed="true"

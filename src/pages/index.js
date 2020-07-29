@@ -49,8 +49,8 @@ const IndexPage = () => {
       <SEO title="Home" />
       <Fade bottom>
         <h1 className="mx-auto leading-tight px-3 lg:mt-4 lg:px-6 xl:px-10 xl:mt-8">
-          Hello! I’m Faiz Alkautsar <br /> I’m software engineer based in Kuala
-          Lumpur, Malaysia. I love CSS and front-end web development!
+          👋 Hello! I’m Faiz Alkautsar <br /> I’m software engineer based in
+          Kuala Lumpur, Malaysia. I love CSS and front-end web development!
         </h1>
       </Fade>
       <Fade bottom delay={700}>
@@ -89,16 +89,19 @@ const IndexPage = () => {
         </Fade>
         <Fade bottom>
           <section className="mt-6 px-3 text-base leading-7 lg:px-6 lg:px-0 lg:w-1/2 lg:pl-12 lg:pr-20 xl:pr-40">
-            <p>A true-born Indonesian</p>
+            {/* <p>A true-born Indonesian</p> */}
             <p>
-              Hello there! I'm a software engineer who is passionate about
-              turning raw idea into beautiful, interactive, working product. I
-              recently graduated from Asia Pacific University of Technology and
+              I'm Faiz, a software engineer who is passionate about turning raw
+              idea into beautiful, interactive, working product. I recently
+              graduated from Asia Pacific University of Technology and
               Innovation majoring in Information Technology and Business
-              Information Systems. I’m now pursuing career as Front-End Web
-              Developer in Kuala Lumpur, Malaysia. My day-to-day stacks at work
-              include CSS/SCSS, React, and Gatsby. However, I like to explore
-              more cool stacks and tools that help me to build stuff.
+              Information Systems.
+            </p>
+            <p>
+              I’m now pursuing career as Front-End Web Developer in Kuala
+              Lumpur, Malaysia. My day-to-day stacks at work include CSS/SCSS,
+              React, and Gatsby. However, I like to explore more cool stacks and
+              tools that help me to build stuff.
             </p>
           </section>
         </Fade>

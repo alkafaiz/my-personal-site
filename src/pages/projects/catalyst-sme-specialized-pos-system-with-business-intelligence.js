@@ -19,7 +19,7 @@ const ProjectPage = () => {
 
   return (
     <LayoutProject
-      title="CATALYST: SME-SPECIALIZED POS SYSTEM WITH BUSINESS INTELLIGENCEATTENDANCE INFORMATION SYSTEM FOR INTERNATIONAL SYMPOSIUM MALAYSIA 2019"
+      title="CATALYST: SME-specialized POS System with Business Intelligence"
       github="https://github.com/alkafaiz/Catalyst-POS"
       section={() => (
         <>

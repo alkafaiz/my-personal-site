@@ -18,7 +18,7 @@ const ProjectPage = () => {
 
   return (
     <LayoutProject
-      title="ATTENDANCE INFORMATION SYSTEM FOR INTERNATIONAL SYMPOSIUM MALAYSIA 2019"
+      title="Attendance Information System for OISAA International Symposium Malaysia 2019"
       github="https://github.com/alkafaiz/SIMY19Checkin"
       section={() => (
         <>
