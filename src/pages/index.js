@@ -72,7 +72,11 @@ const IndexPage = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <FontAwesomeIcon icon={social.icon} size="2x" />
+              <FontAwesomeIcon
+                className="hover:text-yellow-400 transition duration-300 ease-in-out"
+                icon={social.icon}
+                size="2x"
+              />
             </a>
           ))}
         </div>

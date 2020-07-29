@@ -42,8 +42,11 @@ const Layout = ({ children }) => {
           <p className="mb-1">
             Made with <FontAwesomeIcon color="#f7b538" icon={faHeart} /> &
             <span>
-              <Link className="font-bold" to="/">
-                various tech
+              <Link
+                className="text-yellow-600 hover:text-yellow-700"
+                to="/uses"
+              >
+                &nbsp;various tech
               </Link>
             </span>{" "}
             in Jakarta, Indonesia

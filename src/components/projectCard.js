@@ -21,7 +21,7 @@ export default function ProjectCard({
   slug,
 }) {
   return (
-    <div className="w-full border border-gray-500 rounded-lg overflow-hidden pb-3 md:w-5/12 mb-4 md:pb-5 md:mr-4 lg:w-5/12 xl:w-4/12">
+    <div className="w-full border border-gray-500 rounded-lg overflow-hidden pb-3 md:w-5/12 mb-4 md:pb-5 md:mr-4 lg:w-5/12 xl:w-4/12 md:hover:shadow-lg transition duration-500 ease-in-out">
       <Link to={`/projects/${slug}`}>
         <div className="w-full">
           <Img fluid={coverFluid} />

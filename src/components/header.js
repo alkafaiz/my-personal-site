@@ -71,46 +71,60 @@ const Header = ({ siteTitle }) => {
           </svg>
         </button>
       </div>
-      {/* {!isDesktop && ( */}
-      <Fade
-        right
-        when={showMenu || isDesktop}
-        duration={500}
-        // unmountOnExit={true}
-        // mountOnEnter={true}
-      >
-        <div className="bg-black fixed right-0 top-0 h-full w-3/4 z-10 lg:bg-white lg:relative lg:flex lg:items-center lg:w-auto">
-          <div className="p-6 text-right flex flex-col items-end lg:flex-grow lg:flex-row lg:p-0">
-            <button className="border-none lg:hidden" onClick={handleClick}>
-              <svg
-                className="mb-5"
-                xmlns="http://www.w3.org/2000/svg"
-                width="30"
-                height="30"
-                viewBox="0 0 21.21 21.21"
-              >
-                <title>Close</title>
-                <path
-                  d="M12.73,10.61l8.48,8.48-2.12,2.12-8.48-8.48L2.12,21.21,0,19.09l8.49-8.48L0,2.12,2.12,0l8.49,8.49L19.09,0l2.12,2.12Z"
-                  style={{ fill: "#fff" }}
-                />
-              </svg>
-            </button>
-            {navItems.map((nav, index) => (
-              <Link
-                key={index}
-                to={nav.url}
-                className={`text-2xl block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white lg:text-gray-800 lg:text-base lg:hover:text-yellow-400 ${
-                  navItems.length !== index - 1 ? "lg:mr-5" : ""
-                } `}
-              >
-                {nav.label}
-              </Link>
-            ))}
+      {!isDesktop ? (
+        <Fade
+          right
+          when={showMenu || isDesktop}
+          duration={300}
+          // unmountOnExit={true}
+          // mountOnEnter={true}
+        >
+          <div className="bg-black fixed right-0 top-0 h-full w-3/4 z-10 lg:bg-white lg:relative lg:flex lg:items-center lg:w-auto">
+            <div className="p-6 text-right flex flex-col items-end lg:flex-grow lg:flex-row lg:p-0">
+              <button className="border-none lg:hidden" onClick={handleClick}>
+                <svg
+                  className="mb-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  viewBox="0 0 21.21 21.21"
+                >
+                  <title>Close</title>
+                  <path
+                    d="M12.73,10.61l8.48,8.48-2.12,2.12-8.48-8.48L2.12,21.21,0,19.09l8.49-8.48L0,2.12,2.12,0l8.49,8.49L19.09,0l2.12,2.12Z"
+                    style={{ fill: "#fff" }}
+                  />
+                </svg>
+              </button>
+              {navItems.map((nav, index) => (
+                <Link
+                  key={index}
+                  to={nav.url}
+                  className={`text-2xl block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white lg:text-gray-800 lg:text-base lg:hover:text-yellow-400 ${
+                    navItems.length !== index - 1 ? "lg:mr-5" : ""
+                  } `}
+                >
+                  {nav.label}
+                </Link>
+              ))}
+            </div>
           </div>
+        </Fade>
+      ) : (
+        <div>
+          {navItems.map((nav, index) => (
+            <Link
+              key={index}
+              to={nav.url}
+              className={`text-2xl block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white lg:text-gray-800 lg:text-base lg:hover:text-yellow-400 ${
+                navItems.length !== index - 1 ? "lg:mr-5" : ""
+              } `}
+            >
+              {nav.label}
+            </Link>
+          ))}
         </div>
-      </Fade>
-      {/* )} */}
+      )}
     </header>
   )
 }

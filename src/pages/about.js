@@ -1,9 +1,11 @@
 import React from "react"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 const AboutPage = () => {
   return (
     <Layout>
+      <SEO title="About" />
       <div className="lg:w-full lg:flex lg:justify-start lg:my-16 lg:px-3">
         <div className="lg:w-1/3">
           <h2 className="title px-3">About</h2>
@@ -23,7 +25,7 @@ const AboutPage = () => {
             That triggered me to explore the posibilities of technology product
             to solving real world problem. In early 2019, I was entrusted to
             co-lead
-            <span className="text-yellow-600">
+            <span className="text-yellow-600 hover:text-yellow-700">
               <a
                 href="https://www.goodnewsfromindonesia.id/2019/07/20/simposium-ppi-dunia"
                 target="_blank"

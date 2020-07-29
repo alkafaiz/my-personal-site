@@ -1,8 +1,4 @@
 import React from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
-import ProjectCard from "../components/projectCard"
-import Fade from "react-reveal/Fade"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
@@ -15,12 +11,11 @@ import {
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import stacks from "../constants/stacks"
 
-const IndexPage = () => {
+const ContactPage = () => {
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Contact" />
       <div className="lg:w-full lg:flex lg:justify-start lg:my-16 lg:px-3">
         <div className="lg:w-1/3">
           <h2 className="title px-3">Contact</h2>
@@ -45,7 +40,11 @@ const IndexPage = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <FontAwesomeIcon icon={social.icon} size="2x" />
+              <FontAwesomeIcon
+                className="hover:text-yellow-400 transition duration-300 ease-in-out"
+                icon={social.icon}
+                size="2x"
+              />
             </a>
           ))}
           <p className="mt-4">
@@ -66,7 +65,7 @@ const IndexPage = () => {
               required
             ></textarea>
             <button
-              className="bg-black rounded w-full text-white p-1 md:w-auto md:px-4 "
+              className="bg-black hover:bg-yellow-400 hover:text-black transition duration-500 ease-in-out rounded w-full text-white p-1 md:w-auto md:px-4 "
               type="submit"
             >
               Submit
@@ -78,4 +77,4 @@ const IndexPage = () => {
   )
 }
 
-export default IndexPage
+export default ContactPage
