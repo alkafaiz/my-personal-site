@@ -51,14 +51,22 @@ const ContactPage = () => {
             Or else you want to leave me ideas to collaborate, or simply want to
             say hello, please do so!
           </p>
-          <form className="md:w-2/3">
+          <form
+            className="md:w-2/3"
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            action="/submit-message-success"
+          >
             <input
+              name="email"
               className="border border-gray-400 w-full p-2 rounded-lg"
               type="email"
               placeholder="Your email"
               required
             ></input>
             <textarea
+              name="message"
               className="border border-gray-400 w-full p-2 rounded-lg my-3"
               type="text"
               placeholder="What do you have in mind?"
