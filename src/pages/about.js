@@ -6,7 +6,7 @@ const AboutPage = () => {
     <Layout>
       <div className="lg:w-full lg:flex lg:justify-start lg:my-16 lg:px-3">
         <div className="lg:w-1/3">
-          <h2 className="title px-3">About me</h2>
+          <h2 className="title px-3">About</h2>
         </div>
         <section className="px-3 text-base leading-7 lg:w-1/2">
           <p>
