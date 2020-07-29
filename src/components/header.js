@@ -34,7 +34,9 @@ const Header = ({ siteTitle }) => {
 
   useEffect(() => {
     function handleResize(event) {
-      if (window.innerWidth >= 1024) setIsDesktop(true)
+      const windowWidth =
+        typeof window === "undefined" ? 1200 : window.innerWidth
+      if (windowWidth >= 1024) setIsDesktop(true)
       else setIsDesktop(false)
     }
 

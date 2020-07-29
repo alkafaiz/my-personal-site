@@ -143,7 +143,11 @@ const IndexPage = () => {
         <p className="px-3 text-center lg:my-32">
           Interested in collaborating?{" "}
           <span>
-            {window.innerWidth <= 768 && <br />}
+            {typeof window === "undefined" ? (
+              <br />
+            ) : (
+              window.innerWidth <= 768 && <br />
+            )}
             <Link className="font-bold" to="/contact/">
               Send me a message
             </Link>
