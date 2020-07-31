@@ -32,34 +32,39 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
+    <div className="min-h-screen relative">
+      <div className="pb-24">
+        <Header siteTitle={data.site.siteMetadata.title} />
+        <div
+          style={{
+            maxWidth: 1540,
+            margin: "auto",
+          }}
+        >
+          <main>{children}</main>
+        </div>
+      </div>
+      <footer
         style={{
           maxWidth: 1540,
-          margin: "auto",
+          left: "50%",
+          transform: "translateX(-50%)",
         }}
+        className="my-6 text-sm px-3 h-20 mt-4 w-full absolute bottom-0 lg:px-6 xl:px-10"
       >
-        <main>{children}</main>
-
-        <footer className="my-6 text-sm px-3 lg:px-6 xl:px-10 mt-auto">
-          <hr />
-          <p className="mb-1">
-            Made with <FontAwesomeIcon color="#f7b538" icon={faHeart} /> &
-            <span>
-              <Link
-                className="text-yellow-600 hover:text-yellow-700"
-                to="/uses"
-              >
-                &nbsp;various tech
-              </Link>
-            </span>{" "}
-            in Jakarta, Indonesia
-          </p>
-          © Faiz Alkautsar {new Date().getFullYear()}
-        </footer>
-      </div>
-    </>
+        <hr />
+        <p className="mb-1">
+          Made with <FontAwesomeIcon color="#f7b538" icon={faHeart} /> &
+          <span>
+            <Link className="text-yellow-600 hover:text-yellow-700" to="/uses">
+              &nbsp;various tech
+            </Link>
+          </span>{" "}
+          in Jakarta, Indonesia
+        </p>
+        © Faiz Alkautsar {new Date().getFullYear()}
+      </footer>
+    </div>
   )
 }
 

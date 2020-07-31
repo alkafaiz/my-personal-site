@@ -47,7 +47,7 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" />
       <h1 className="mx-auto leading-tight px-3 lg:mt-4 lg:px-6 xl:px-10 xl:mt-8">
-        <span role="img" ariaLabel="Hey!">
+        <span role="img" aria-label="Hey!">
           👋
         </span>{" "}
         Hello! I’m Faiz Alkautsar <br /> I’m software engineer based in Kuala
