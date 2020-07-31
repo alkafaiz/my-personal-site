@@ -21,7 +21,7 @@ const IndexPage = () => {
     query {
       placeholderImage: file(relativePath: { eq: "alkafaiz-cover.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 2000) {
+          fluid(maxWidth: 700) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -80,9 +80,13 @@ const IndexPage = () => {
         ))}
       </div>
       <div className="my-6 md:my-10 lg:my-16 flex">
-        <div className="hidden lg:block w-1/2">
-          <Img fluid={data.placeholderImage.childImageSharp.fluid} />
-        </div>
+        {typeof window !== "undefined" && window.innerWidth >= 1024 ? (
+          <div className="hidden lg:block w-1/2">
+            <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+          </div>
+        ) : (
+          ""
+        )}
         <section className="mt-6 px-3 text-base leading-7 lg:px-6 lg:px-0 lg:w-1/2 lg:pl-12 lg:pr-20 xl:pr-40">
           {/* <p>A true-born Indonesian</p> */}
           <p>

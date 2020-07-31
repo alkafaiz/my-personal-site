@@ -71,7 +71,7 @@ const Header = ({ siteTitle }) => {
         </button>
       </div>
       {!isDesktop ? (
-        <Fade right when={showMenu || isDesktop} duration={300} on>
+        <Fade right when={showMenu || isDesktop} duration={300}>
           <div
             className={`bg-black fixed right-0 top-0 h-full w-3/4 z-10 ${
               showMenu ? "block" : "hidden"
