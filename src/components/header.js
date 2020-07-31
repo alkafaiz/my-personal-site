@@ -52,12 +52,9 @@ const Header = ({ siteTitle }) => {
       style={{ maxWidth: 1540, margin: "auto" }}
       className="px-3 mx-auto flex items-center justify-between flex-wrap p-6 lg:px-5 lg:py-6 xl:px-10 xl:mt-5"
     >
-      {/* <div className="flex items-center"> */}
       <Link to="/">
         <AlkafaizIcon />
       </Link>
-      {/* <span className="ml-3 text-2xl font-bold">ALKAFAIZ.</span>
-      </div> */}
       <div className="block lg:hidden">
         <button
           className="flex items-center px-3 py-2 border rounded border-black hover:text-white hover:border-white"
@@ -74,15 +71,13 @@ const Header = ({ siteTitle }) => {
         </button>
       </div>
       {!isDesktop ? (
-        <Fade
-          right
-          when={showMenu || isDesktop}
-          duration={300}
-          // unmountOnExit={true}
-          // mountOnEnter={true}
-        >
-          <div className="bg-black fixed right-0 top-0 h-full w-3/4 z-10 lg:bg-white lg:relative lg:flex lg:items-center lg:w-auto">
-            <div className="p-6 text-right flex flex-col items-end lg:flex-grow lg:flex-row lg:p-0">
+        <Fade right when={showMenu || isDesktop} duration={300} on>
+          <div
+            className={`bg-black fixed right-0 top-0 h-full w-3/4 z-10 ${
+              showMenu ? "block" : "hidden"
+            }`}
+          >
+            <div className="p-6 text-right flex flex-col items-end">
               <button className="border-none lg:hidden" onClick={handleClick}>
                 <svg
                   className="mb-5"
