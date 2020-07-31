@@ -20,6 +20,7 @@ const ProjectPage = () => {
     <LayoutProject
       title="Attendance Information System for OISAA International Symposium Malaysia 2019"
       github="https://github.com/alkafaiz/SIMY19Checkin"
+      image={data.SIMY.childImageSharp.fluid}
       section={() => (
         <>
           <div>

@@ -1,9 +1,9 @@
 import React from "react"
 import SEO from "./seo"
 
-const LayoutProject = ({ title, github, section }) => (
+const LayoutProject = ({ title, github, section, image }) => (
   <>
-    <SEO title={title} />
+    <SEO title={title} image={image} />
 
     <div className="p-5 w-auto m-0 lg:w-2/3 mx-auto lg:py-16">
       <header className="lg:w-3/12 lg:float-left lg:fixed">

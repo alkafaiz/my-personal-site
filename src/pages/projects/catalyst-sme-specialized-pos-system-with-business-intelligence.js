@@ -21,6 +21,7 @@ const ProjectPage = () => {
     <LayoutProject
       title="CATALYST: SME-specialized POS System with Business Intelligence"
       github="https://github.com/alkafaiz/Catalyst-POS"
+      image={data.catalyst.childImageSharp.fluid}
       section={() => (
         <>
           <div>

@@ -3,6 +3,13 @@ module.exports = {
     title: `Faiz Alkautsar`,
     description: `Hi there! I'm Faiz Alkautsar, a Software Engineer based in Kuala Lumpur, Malaysia. I love Front-End Web Development and System Design. Passionate in working beautiful fully functioning product with purpose.`,
     author: `@alkafaiz`,
+    keywords: [
+      "Faiz Alkautsar",
+      "Faiz Maruf Al Kautsar",
+      "Alkafaiz",
+      "Asia Pacific University",
+    ],
+    siteUrl: "https://alkafaiz.com",
   },
   plugins: [
     {

@@ -45,7 +45,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Hi!" />
       <h1 className="mx-auto leading-tight px-3 lg:mt-4 lg:px-6 xl:px-10 xl:mt-8">
         <span role="img" aria-label="Hey!">
           👋
