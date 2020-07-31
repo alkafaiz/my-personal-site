@@ -641,3 +641,12 @@ pre tt:after {
   display: block;
   margin-right: 5px;
 }
+
+.filter-grey {
+  filter: saturate(0.1);
+  transition: filter 400ms ease-in-out;
+}
+
+.filter-grey:hover {
+  filter: none;
+}

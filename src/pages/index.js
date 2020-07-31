@@ -19,7 +19,7 @@ import stacks from "../constants/stacks"
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "alkafaiz-cover.jpg" }) {
+      placeholderImage: file(relativePath: { eq: "convo.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 700) {
             ...GatsbyImageSharpFluid
@@ -82,7 +82,10 @@ const IndexPage = () => {
       <div className="my-6 md:my-10 lg:my-16 flex">
         {typeof window !== "undefined" && window.innerWidth >= 1024 ? (
           <div className="hidden lg:block w-1/2">
-            <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+            <Img
+              fluid={data.placeholderImage.childImageSharp.fluid}
+              className="filter-grey"
+            />
           </div>
         ) : (
           ""

@@ -1,14 +1,39 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const AboutPage = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      placeholderImage: file(relativePath: { eq: "alkafaiz-cover-1.jpg" }) {
+        childImageSharp {
+          fluid(maxHeight: 600, maxWidth: 500) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
+
   return (
     <Layout>
       <SEO title="About" />
       <div className="lg:w-full lg:flex lg:justify-start lg:my-16 lg:px-3">
         <div className="lg:w-1/3">
           <h2 className="title px-3">About</h2>
+          {typeof window !== "undefined"
+            ? window.innerWidth >= 1024 && (
+                <div className="w-10/12">
+                  <Img
+                    fluid={data.placeholderImage.childImageSharp.fluid}
+                    className="filter-grey"
+                  />
+                </div>
+              )
+            : ""}
         </div>
         <section className="px-3 text-base leading-7 lg:w-1/2">
           <p>
