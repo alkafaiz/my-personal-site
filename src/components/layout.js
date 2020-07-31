@@ -11,9 +11,14 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 import "typeface-poppins"
 
 import Header from "./header"
+import "@fortawesome/fontawesome-svg-core/styles.css"
+// Prevent fontawesome from adding its CSS since we did it manually above:
+import { config } from "@fortawesome/fontawesome-svg-core"
 import "./layout.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faHeart } from "@fortawesome/free-solid-svg-icons"
+
+config.autoAddCss = false /* eslint-disable import/first */
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
