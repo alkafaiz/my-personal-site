@@ -1,5 +1,5 @@
-import React from "react"
-
+import React, { useRef, createRef } from "react"
+import * as qs from "querystring"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faLinkedinIn,
@@ -12,7 +12,29 @@ import {
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const ContactPage = () => {
+const ContactPage = ({ location }) => {
+  const formRef = useRef()
+  const emailRef = useRef()
+  const messageRef = useRef()
+
+  const handleSubmit = async event => {
+    event.preventDefault()
+    const formData = {
+      "form-name": "contact",
+      email: emailRef.current.value,
+      message: messageRef.current.value,
+    }
+
+    const requestOptions = {
+      method: "post",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: qs.stringify(formData),
+    }
+
+    fetch(location.pathname, requestOptions)
+      .then(res => console.log("success", res))
+      .catch(err => console.log("error", err))
+  }
   return (
     <Layout>
       <SEO title="Contact" />
@@ -52,13 +74,16 @@ const ContactPage = () => {
             say hello, please do so!
           </p>
           <form
+            ref={formRef}
             className="md:w-2/3"
             name="contact"
             method="POST"
             data-netlify="true"
-            action="/submit-message-success"
+            //action="/submit-message-success"
+            onSubmit={handleSubmit}
           >
             <input
+              ref={emailRef}
               name="email"
               className="border border-gray-400 w-full p-2 rounded-lg"
               type="email"
@@ -66,6 +91,7 @@ const ContactPage = () => {
               required
             ></input>
             <textarea
+              ref={messageRef}
               name="message"
               className="border border-gray-400 w-full p-2 rounded-lg my-3"
               type="text"
