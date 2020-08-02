@@ -132,11 +132,11 @@ function SEO({
                 },
                 {
                   property: "og:image:width",
-                  content: image.width,
+                  content: seoImg.childImageSharp.fluid.width,
                 },
                 {
                   property: "og:image:height",
-                  content: image.height,
+                  content: seoImg.childImageSharp.fluid.height,
                 },
                 {
                   name: "twitter:card",
