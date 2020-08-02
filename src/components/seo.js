@@ -90,7 +90,7 @@ function SEO({
         },
         {
           property: `og:type`,
-          content: `article`,
+          content: `website`,
         },
         {
           name: `twitter:creator`,
@@ -124,6 +124,10 @@ function SEO({
                   name: "twitter:card",
                   content: "summary_large_image",
                 },
+                {
+                  name: "twitter:image",
+                  content: image,
+                },
               ]
             : [
                 {
@@ -142,10 +146,10 @@ function SEO({
                   name: "twitter:card",
                   content: "summary_large_image",
                 },
-                // {
-                //   name: "twitter:card",
-                //   content: "summary",
-                // },
+                {
+                  name: "twitter:image",
+                  content: image,
+                },
               ]
         )
         .concat(meta)}
