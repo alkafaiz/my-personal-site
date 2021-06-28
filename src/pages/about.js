@@ -45,22 +45,9 @@ const AboutPage = () => {
             A couple of words about my professional life: I am an Indonesian
             software engineer from Surabaya but working in Kuala Lumpur
             Malaysia. I graduated from university with a Bachelor Degree of
-            Science in Information Technology in 2019. At university, I realized
-            how empowering technology can be in so many aspects in ourlives.
-            That triggered me to explore the posibilities of technology product
-            to solving real world problem. In early 2019, I was entrusted to
-            co-lead
-            <span className="text-yellow-600 hover:text-yellow-700">
-              <a
-                href="https://www.goodnewsfromindonesia.id/2019/07/20/simposium-ppi-dunia"
-                target="_blank"
-                rel="noreferrer"
-              >
-                &nbsp;11th OISAA International Symposium
-              </a>
-            </span>
-            , and that was one example of how I integrated technology to solve
-            specific problem that we were facing.
+            Science in Information Technology in 2019. I have decent sense of
+            how usable UI should look like, which leads me to work as Front-end
+            engineer. I get fascinated by why products work, or doesnt.
           </p>
           <p>
             <span className="font-bold">Life-time student</span>
@@ -68,10 +55,6 @@ const AboutPage = () => {
             allocate dedicated amount of time and effort to improve myself by
             taking online courses, reading blogs and articles, attending
             community events, or sometimes just spending all night coding.
-          </p>
-          <p>
-            Almost forgot! Apart from techy thingy, I also love books!
-            Specifically classic novels.
           </p>
         </section>
       </div>
